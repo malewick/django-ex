@@ -1,0 +1,86 @@
+{% extends "personal/header.html" %}
+{% block content %}
+
+<h3><a href="/blog/{{post.id}}">{{ post.title }}</a></h3>
+
+{% if post.dateto %}
+<h6> {{ post.datefrom|date:"F j" }} &mdash; {{ post.dateto|date:"F j Y" }}</h6>
+{% elif post.datefrom %}
+<h6> on {{ post.datefrom|date:"F j Y" }}</h6>
+{% endif %}
+
+<div class = "container">
+	{% if post.body %}
+	{{ post.body|safe|linebreaks}}
+	{% else %}
+	{{ post.short|safe|linebreaks}}
+	{% endif %}
+	<hr>
+<br>
+<div class="row">
+	<div class="col-sm-4">
+		{% if post.link1 %}
+		Links:<br>
+		<a href="{{post.link1}}">{{post.link1|truncatechars:39}}</a><br>
+		{% endif %}
+		{% if post.link2 %}
+		<a href="{{post.link2}}">{{post.link2|truncatechars:39}}</a><br>
+		{% endif %}
+		{% if post.link3 %}
+		<a href="{{post.link3}}">{{post.link3|truncatechars:39}}</a><br>
+		{% endif %}
+	</div>
+	<div class="col-sm-8">
+		{% if post.picture1 %}
+		Pictures:<br>
+		<a href="media/{{post.picture1}}" target="_blank">
+			<img src=media/{{post.picture1}} class="img-thumbnail" style="max-width:33%; height:auto;" alt="picture1">
+		</a>
+		{% endif %}
+		{% if post.picture2 %}
+		<a href="media/{{post.picture2}}" target="_blank">
+			<img src=media/{{post.picture2}} class="img-thumbnail" style="max-width:33%; height:auto;" alt="picture1">
+		</a>
+		{% endif %}
+		{% if post.picture3 %}
+		<a href="media/{{post.picture3}}" target="_blank">
+			<img src=media/{{post.picture3}} class="img-thumbnail" style="max-width:33%; height:auto;" alt="picture1">
+		</a>
+		{% endif %}
+	</div>
+	<div class="col-sm-8">
+		{% if post.file1 %}
+		Files:<br>
+		<a href="media/{{post.file1}}" download>
+			<button type="button" class="btn btn-default btn-lg">
+				<span class="glyphicon glyphicon-file"></span>
+				{{ post.file1.name}}
+			</button>
+		</a>
+		{% endif %}
+		{% if post.file2 %}
+		<a href="media/{{post.file2}}" download>
+			<br>
+			<button type="button" class="btn btn-default btn-lg">
+				<span class="glyphicon glyphicon-file"></span>
+				{{ post.file2.name}}
+			</button>
+		</a>
+		{% endif %}
+		{% if post.file3 %}
+		<a href="media/{{post.file3}}" download>
+			<br>
+			<button type="button" class="btn btn-default btn-lg">
+				<span class="glyphicon glyphicon-file"></span>
+				{{ post.file3.name}}
+			</button>
+		</a>
+		{% endif %}
+	</div>
+</div>
+
+</div>
+
+<br>
+
+{% endblock %}

@@ -1,0 +1,47 @@
+{% load staticfiles %}
+{% block content %}
+
+
+	<div id="about" class="container" align="center">
+	<br>
+	<br>
+	<br>
+	  <div class="row">
+	    <div class="col-sm-4">
+		<img src="{% static 'personal/images/ph.jpg' %}" class="slideanim responsive-img" style='max-height:240px;' alt="face">
+	    </div>
+	    <div class="col-sm-8" align="left">
+	      <p>
+	      I am a doctorate student at University of Wrocław advised by <a href="https://pl.wikipedia.org/wiki/Ludwik_Turko">prof. Ludwik Turko</a> and <a href="https://en.wikipedia.org/wiki/Marek_Gazdzicki">prof. Marek Gaździcki</a>.
+	      My main research focus is on heavy ion collisions, within the scope of the <a href="http://shine.web.cern.ch/">NA61/SHINE</a> experiment at CERN and the <a href="http://ift.uni.wroc.pl">Division of Elementary Particle Theory</a>.<br>
+	      I study the collisions of ions of Argon and Scandium, looking forward to observe indications of the onset of deconfinement.
+	      </p>
+	      <p><br>
+	      I am catholic, scout and a rambler.
+	      </p>
+	      <br>
+	      <hr>
+	      <br>
+	      <div class="row">
+		<div class="col-sm-4">
+		  <div class="text-center">
+		  <h4>My CV:</h4> 
+		  </div>
+		</div>
+		<div class="col-sm-4">
+		  <button type="button" class="btn btn-default btn-lg">
+		    <a href="cv_en.pdf" target="blank"><span class="glyphicon glyphicon-file"></span> in English</a> 
+		  </button>
+		</div>
+		<div class="col-sm-4">
+		  <button type="button" class="btn btn-default btn-lg">
+		    <a href="cv_pl.pdf" target="blank"><span class="glyphicon glyphicon-file"></span> in Polish</a> 
+		  </button>
+		</div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	</div>
+
+{% endblock %}

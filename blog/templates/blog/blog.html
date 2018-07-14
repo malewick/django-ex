@@ -1,0 +1,27 @@
+{% extends "personal/header.html" %}
+{% block content %}
+	{% for post in object_list %}
+		<a href="/blog/{{post.id}}"><h3>  {{ post.title }}</h3></a>
+
+		{{ post.datefrom|date:"d.m.Y" }}
+		{% if post.dateto %}
+		 &mdash; {{ post.dateto|date:"d.m.Y" }}
+		{% endif %}
+
+		<div>
+			{{ post.short }}
+		</div>
+
+		{% if post.tag1 %}
+		<a style="color:gray;" class="btn btn-default btn-xs" href="/blog/{{post.tag1}}">{{post.tag1}}</a>
+		{% endif %}
+		{% if post.tag2 %}
+		<a style="color:gray;" class="btn btn-default btn-xs" href="/blog/{{post.tag2}}">{{post.tag2}}</a>
+		{% endif %}
+		{% if post.tag3 %}
+		<a style="color:gray;" class="btn btn-default btn-xs" href="/blog/{{post.tag3}}">{{post.tag3}}</a>
+		{% endif %}
+
+		<hr>
+	{% endfor %}
+{% endblock %}
