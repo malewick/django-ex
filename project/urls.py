@@ -13,7 +13,7 @@ urlpatterns = [
     #url(r'^health$', health),
     url(r'^', include('personal.urls')),
     url(r'^blog/', include('blog.urls')),
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin/', admin.site.urls),
 ]
 
 if settings.DEBUG:
