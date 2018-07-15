@@ -1,4 +1,4 @@
-{% extends "personal/header.html" %}
+{% extends "blog/header.html" %}
 {% block content %}
 	{% for post in object_list %}
 		<a href="/blog/{{post.id}}"><h3>  {{ post.title }}</h3></a>

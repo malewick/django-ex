@@ -1,10 +1,10 @@
-{% extends "personal/header.html" %}
+{% extends "blog/header.html" %}
 {% block content %}
 
 
 	<div class="row text-center">
 	<a style="color:black;" class="btn btn-default btn-lg" href="/blog">ALL</a>
-	{% with 'conference popularization award colaboration organization' as list %}
+	{% with 'conference popularization award collaboration organization job project seminar' as list %}
 		{% for tag in list.split %}
 			{% if tag == view.kwargs.tag %}
 				<a style="color:white;" class="btn btn-primary btn-md" href="/blog/{{tag}}">{{tag}}</a>
