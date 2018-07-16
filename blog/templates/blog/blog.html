@@ -1,21 +1,31 @@
 {% extends "blog/header.html" %}
 {% block content %}
 	{% for post in object_list %}
+
+	<div class="row">
+	{% if post.picture1 %}
+	<div class="col-sm-8">
+	{% else %}
+	<div class="col-sm-12">
+	{% endif %}
+
 		<a href="/blog/{{post.id}}"><h3>  {{ post.title }}</h3></a>
 
 		<div style="color:#A9A9C1">
-		{% if post.dateto %}
+		{% if post.datefrom %}
 		<span class="glyphicon glyphicon-calendar"></span>
 		{{ post.datefrom|date:"d.m.Y" }}
-		{% if post.datefrom %}
+		{% if post.dateto %}
 		 &mdash; {{ post.dateto|date:"d.m.Y" }}
 		{% endif %}
 		<br>
 		{% endif %}
 
 		{% if post.place %}
+		<a style="color:#A9A9C1" href="https://maps.google.com/?q={{ post.place }}" target="_blank">
 		<span class="glyphicon glyphicon-map-marker"></span>
 		{{ post.place }}
+		</a>
 		{% endif %}
 		</div>
 
@@ -48,7 +58,30 @@
 		<a style="color:gray;" class="btn btn-default btn-xs" href="/blog/{{post.tag3}}">{{post.tag3}}</a>
 		{% endif %}
 
-		<hr>
+		</div>
+		<div class="col-sm-4">
+			{% if post.picture1 %}
+			<a href="media/{{post.picture1}}" target="_blank">
+				<img src=media/{{post.picture1}} class="img-thumbnail" style="max-width:23%; height:auto;" alt="picture1">
+			</a>
+			{% endif %}
+			{% if post.picture2 %}
+			<a href="media/{{post.picture2}}" target="_blank">
+				<img src=media/{{post.picture2}} class="img-thumbnail" style="max-width:23%; height:auto;" alt="picture1">
+			</a>
+			{% endif %}
+			{% if post.picture3 %}
+			<a href="media/{{post.picture3}}" target="_blank">
+				<img src=media/{{post.picture3}} class="img-thumbnail" style="max-width:23%; height:auto;" alt="picture1">
+			</a>
+			{% endif %}
+		</div>
+
+	</div>
+
+	<div class="row">
+	<hr>
+	</div>
 
 	{% endfor %}
 {% endblock %}

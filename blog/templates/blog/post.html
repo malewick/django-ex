@@ -7,12 +7,17 @@
 <h6> <span class="glyphicon glyphicon-calendar"></span>
 {{ post.datefrom|date:"F j" }} &mdash; {{ post.dateto|date:"F j Y" }}</h6>
 {% elif post.datefrom %}
-<h6> on {{ post.datefrom|date:"F j Y" }}</h6>
+<h6> <span class="glyphicon glyphicon-calendar"></span>  on {{ post.datefrom|date:"F j Y" }}</h6>
 {% endif %}
 
 {% if post.place %}
-<h6> <span class="glyphicon glyphicon-map-marker"></span>
+<a href="https://maps.google.com/?q={{ post.place }}" target="_blank">
+<h6><span class="glyphicon glyphicon-map-marker"></span>
 {{ post.place }}</h6>
+</a>
+
+
+
 {% endif %}
 
 

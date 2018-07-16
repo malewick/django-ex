@@ -14,32 +14,92 @@
 		{% endfor %}
 	{% endwith %}
 	</div>
+	<br>
 
 	{% for post in object_list %}
 		{% if view.kwargs.tag == post.tag1 or view.kwargs.tag == post.tag2 or view.kwargs.tag == post.tag3  %}
 
-		<a href="/blog/{{post.id}}"><h3>  {{ post.title }}</h3></a>
-
-		{{ post.datefrom|date:"Y-m-d" }}
-		{% if post.dateto %}
-		 &mdash; {{ post.dateto|date:"Y-m-d" }}
+		<div class="row">
+		{% if post.picture1 %}
+		<div class="col-sm-8">
+		{% else %}
+		<div class="col-sm-12">
 		{% endif %}
 
-		<div>
-			{{ post.short }}
+			<a href="/blog/{{post.id}}"><h3>  {{ post.title }}</h3></a>
+
+			<div style="color:#A9A9C1">
+			{% if post.datefrom %}
+			<span class="glyphicon glyphicon-calendar"></span>
+			{{ post.datefrom|date:"d.m.Y" }}
+			{% if post.dateto %}
+			 &mdash; {{ post.dateto|date:"d.m.Y" }}
+			{% endif %}
+			<br>
+			{% endif %}
+
+			{% if post.place %}
+			<a style="color:#A9A9C1" href="https://maps.google.com/?q={{ post.place }}" target="_blank">
+			<span class="glyphicon glyphicon-map-marker"></span>
+			{{ post.place }}
+			</a>
+			{% endif %}
+			</div>
+
+			<div onclick="location.href='/blog/{{post.id}}';" style="cursor: pointer;">
+				{{ post.short }}
+			</div>
+
+			<div>
+				{% if post.link1 %}
+				<a href="{{post.link1}}">{{post.link1|truncatechars:39}}</a>
+				{% endif %}
+				{% if post.link2 %}
+				, <a href="{{post.link2}}">{{post.link2|truncatechars:39}}</a>
+				{% endif %}
+				{% if post.link3 %}
+				, <a href="{{post.link3}}">{{post.link3|truncatechars:39}}</a>
+				{% endif %}
+				{% if post.link1 %}
+				<br>
+				{% endif %}
+			</div>
+
+			{% if post.tag1 %}
+			<a style="color:gray;" class="btn btn-default btn-xs" href="/blog/{{post.tag1}}">{{post.tag1}}</a>
+			{% endif %}
+			{% if post.tag2 %}
+			<a style="color:gray;" class="btn btn-default btn-xs" href="/blog/{{post.tag2}}">{{post.tag2}}</a>
+			{% endif %}
+			{% if post.tag3 %}
+			<a style="color:gray;" class="btn btn-default btn-xs" href="/blog/{{post.tag3}}">{{post.tag3}}</a>
+			{% endif %}
+
+			</div>
+			<div class="col-sm-4">
+				{% if post.picture1 %}
+				<a href="media/{{post.picture1}}" target="_blank">
+					<img src=media/{{post.picture1}} class="img-thumbnail" style="max-width:23%; height:auto;" alt="picture1">
+				</a>
+				{% endif %}
+				{% if post.picture2 %}
+				<a href="media/{{post.picture2}}" target="_blank">
+					<img src=media/{{post.picture2}} class="img-thumbnail" style="max-width:23%; height:auto;" alt="picture1">
+				</a>
+				{% endif %}
+				{% if post.picture3 %}
+				<a href="media/{{post.picture3}}" target="_blank">
+					<img src=media/{{post.picture3}} class="img-thumbnail" style="max-width:23%; height:auto;" alt="picture1">
+				</a>
+				{% endif %}
+			</div>
+
 		</div>
 
-		{% if post.tag1 %}
-		<a style="color:gray;" class="btn btn-default btn-xs" href="/blog/{{post.tag1}}">{{post.tag1}}</a>
-		{% endif %}
-		{% if post.tag2 %}
-		<a style="color:gray;" class="btn btn-default btn-xs" href="/blog/{{post.tag2}}">{{post.tag2}}</a>
-		{% endif %}
-		{% if post.tag3 %}
-		<a style="color:gray;" class="btn btn-default btn-xs" href="/blog/{{post.tag3}}">{{post.tag3}}</a>
-		{% endif %}
-
+		<div class="row">
 		<hr>
+		</div>
+
 		{% endif %}
 	{% endfor %}
 {% endblock %}
