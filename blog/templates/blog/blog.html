@@ -3,13 +3,39 @@
 	{% for post in object_list %}
 		<a href="/blog/{{post.id}}"><h3>  {{ post.title }}</h3></a>
 
-		{{ post.datefrom|date:"d.m.Y" }}
+		<div style="color:#A9A9C1">
 		{% if post.dateto %}
+		<span class="glyphicon glyphicon-calendar"></span>
+		{{ post.datefrom|date:"d.m.Y" }}
+		{% if post.datefrom %}
 		 &mdash; {{ post.dateto|date:"d.m.Y" }}
 		{% endif %}
+		<br>
+		{% endif %}
+
+		{% if post.place %}
+		<span class="glyphicon glyphicon-map-marker"></span>
+		{{ post.place }}
+		{% endif %}
+		</div>
+
+		<div onclick="location.href='/blog/{{post.id}}';" style="cursor: pointer;">
+			{{ post.short }}
+		</div>
 
 		<div>
-			{{ post.short }}
+			{% if post.link1 %}
+			<a href="{{post.link1}}">{{post.link1|truncatechars:39}}</a>
+			{% endif %}
+			{% if post.link2 %}
+			, <a href="{{post.link2}}">{{post.link2|truncatechars:39}}</a>
+			{% endif %}
+			{% if post.link3 %}
+			, <a href="{{post.link3}}">{{post.link3|truncatechars:39}}</a>
+			{% endif %}
+			{% if post.link1 %}
+			<br>
+			{% endif %}
 		</div>
 
 		{% if post.tag1 %}
@@ -23,5 +49,6 @@
 		{% endif %}
 
 		<hr>
+
 	{% endfor %}
 {% endblock %}

@@ -4,16 +4,22 @@
 <h3><a href="/blog/{{post.id}}">{{ post.title }}</a></h3>
 
 {% if post.dateto %}
-<h6> {{ post.datefrom|date:"F j" }} &mdash; {{ post.dateto|date:"F j Y" }}</h6>
+<h6> <span class="glyphicon glyphicon-calendar"></span>
+{{ post.datefrom|date:"F j" }} &mdash; {{ post.dateto|date:"F j Y" }}</h6>
 {% elif post.datefrom %}
 <h6> on {{ post.datefrom|date:"F j Y" }}</h6>
 {% endif %}
 
+{% if post.place %}
+<h6> <span class="glyphicon glyphicon-map-marker"></span>
+{{ post.place }}</h6>
+{% endif %}
+
+
 <div class = "container">
+	{{ post.short|safe|linebreaks}}
 	{% if post.body %}
 	{{ post.body|safe|linebreaks}}
-	{% else %}
-	{{ post.short|safe|linebreaks}}
 	{% endif %}
 	<hr>
 <br>
@@ -30,6 +36,8 @@
 		<a href="{{post.link3}}">{{post.link3|truncatechars:39}}</a><br>
 		{% endif %}
 	</div>
+</div>
+<div class="row">
 	<div class="col-sm-8">
 		{% if post.picture1 %}
 		Pictures:<br>
