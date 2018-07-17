@@ -1,0 +1,232 @@
+
+
+body {
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+    color: #605F6C;
+}
+
+h2 {
+    font-size: 24px;
+    /*text-transform: uppercase;*/
+    color: #605F6C;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #605F6C;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.jumbotron { 
+    background-color: #BA5624;
+    color: #FFFFFF;
+    padding: 30px 5px;
+    font-family: Montserrat, sans-serif;
+}
+
+.jumbotron p {
+    font: 40 15px Lato, sans-serif;
+    font-size: 20px;
+}
+
+.jumbotron h1 {
+    color: #FCDE9C;
+}
+
+.jumbotron h2 {
+    color: #BA5624;
+}
+
+.glyphicon {
+    font-size: 20px;
+}
+
+.bg-grey {
+    background-color: #F6F6F6;
+}
+
+.container-fluid {
+    padding: 20px 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .col-sm-4 {
+        text-align: center;
+        margin: 25px 0;
+    }
+}
+
+.logo-small {
+    color: #BA5624;
+    font-size: 50px;
+}
+
+.logo-medium {
+    color: #BA5624;
+    font-size: 100px;
+}
+
+.logo {
+    color: #BA5624;
+    font-size: 200px;
+}
+
+.thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+}
+
+.carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #BA5624;
+}
+
+.carousel-indicators li {
+    border-color: #BA5624;
+}
+
+.carousel-indicators li.active {
+    background-color: #BA5624;
+}
+
+.item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+}
+
+.item span {
+    font-style: normal;
+}
+
+.row {
+	max-width: 800px;
+}
+
+    .panel {
+    border: 1px solid #BA5624; 
+    border-radius:0;
+    transition: box-shadow 0.5s;
+}
+
+.panel:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+}
+
+.panel-footer .btn:hover {
+    border: 1px solid #BA5624;
+    background-color: #fff !important;
+    color: #BA5624;
+}
+
+.panel-heading {
+    color: #fff !important;
+    background-color: #BA5624 !important;
+    padding: 5px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    height: 140px
+}
+
+.panel-body {
+	height: 130px;
+}
+
+.panel-footer {
+    background-color: #fff !important;
+}
+
+.panel-footer h3 {
+    font-size: 32px;
+}
+
+.panel-footer h4 {
+    color: #aaa;
+    font-size: 14px;
+}
+
+.panel-footer .btn {
+    margin: 5px 0;
+    background-color: #BA5624;
+    color: #FFFFFF;
+}
+
+.nav {
+    margin-bottom: 10;
+    background-color: #FFFFFF;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.6 !important;
+    letter-spacing: 2px;
+    border-radius: 10;
+    font-family: Montserrat, sans-serif;
+}
+
+.nav-pills li{
+    margin-right: 26px;
+    margin-left: 26px;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus{
+    background-color:#C4D6B0;
+    color:#101010;
+}
+
+footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #BA5624;
+}
+
+.slideanim {visibility:hidden;}
+.slide {
+    /* The name of the animation */
+    animation-name: slide;
+    -webkit-animation-name: slide; 
+    /* The duration of the animation */
+    animation-duration: 1s; 
+    -webkit-animation-duration: 1s;
+    /* Make the element visible */
+    visibility: visible; 
+}
+
+/* Go from 0% to 100% opacity (see-through) and specify the percentage from when to slide in the element along the Y-axis */
+@keyframes slide {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+    } 
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+    } 
+}
+@-webkit-keyframes slide {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+    } 
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+    }
+}
+

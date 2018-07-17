@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'welcome',
     'personal',
     'blog',
+    'dosematic',
 ]
 
 MIDDLEWARE = [

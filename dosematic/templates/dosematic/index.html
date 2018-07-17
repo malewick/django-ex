@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Dosematic v1.0.1</title>
+  <meta charset="utf-8">
+  {% load staticfiles %}
+  <link rel="stylesheet" href="{% static 'dosematic/css/style.css' %}">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+  .affix {
+      top: 20px;
+      z-index: 9999 !important;
+  }
+  </style>
+
+</head>
+<body id="top" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<div class="jumbotron text-center">
+  <h1>Dosematic</h1>
+  <h2>Dose estimation analysis framework</h2>
+	<p>
+	A modular scientific software framework created for statistical analysis of dosimetric data.<br>
+	Clear user interface allows for quick input of the data, plotting and calculations.
+	</p><br>
+</div>
+
+<div class="container">
+
+<div class="row">
+
+<div class="col-md-8">
+
+<div class="container" align="center">
+  <ul class="nav nav-pills" role="tablist">
+    <li class="active"><a data-toggle="tab" href="#home"><span class="glyphicon glyphicon-play-circle logo-medium"></span><br>Getting Started</a></li>
+    <li><a data-toggle="tab" href="#menu1"><span class="glyphicon glyphicon-book logo-medium"></span><br>Refference Guide</a></li>
+    <li><a data-toggle="tab" href="#menu2"><span class="glyphicon glyphicon-download-alt logo-medium"></span><br>Download</a></li>
+    <li><a data-toggle="tab" href="#menu3"><span class="glyphicon glyphicon-blackboard logo-medium"></span><br>Gallery</a></li>
+  </ul>
+
+
+
+
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <div id="tutorial" class="container-fluid bg-grey" align="left">
+      <h3>Dosematic is...</h3>
+      <ul>
+	<li>User friendly graphical interface.</li>
+	<li>Tool for a conveinent data input.</li>
+	<li>Fits calibration curve to entered data.</li>
+	<li>Calculates yields, doses and their statistical uncertainties.</li>
+	<li>Suitable for three exposure modes: Acute, Partial and Protracted.</li>
+	<li>Covers five data categories: Dicentric Assay, DNA Repair Foci, Micronucleus Assay, FISH Translocation, PCC Chemically Induced and PCC Fusion.</li>
+      <ul>
+    </div>
+    <div class="container-fluid bg-grey" align="left">
+      <p>See for yourself -- check out our <a class="link-to-tab" href="#menu3"><button class="btn btn-default btn-sm"></span>Gallery</button></a><br>
+      Or go straight to the <a class="link-to-tab" href="#menu2"><button class="btn btn-default btn-sm"></span>Download page</button></a><br>
+      For an easy start with the DoseMatic platform check out our <a class="link-to-tab" href="#menu1"><button class="btn btn-default btn-sm"></span>Guides</button></a><br>
+    </div>
+    </div>
+
+
+
+
+
+    <div id="menu1" class="tab-pane fade">
+      <div id="tutorial" class="container-fluid bg-grey" align="left">
+      <h3>Beginners Guide</h3>
+        <div class="row">
+	 <div class="col-sm-1">
+	  <a href="DoseMaticDoc.pdf" target="_blank"><button class="btn btn-default btn-lg">pdf</button></a>
+	 </div>
+	 <div class="col-sm-2">
+	  <a href="https://docs.google.com/document/d/14xMrjeCOPhQw1ptRxiu5X5i3La64aVz3gAeVRFPt9ss/edit?usp=sharing" target="_blank"><button class="btn btn-default btn-lg">gdocs</button></a>
+	 </div>
+	 <div class="col-sm-8">
+          <p>Basic guidelines concerning DoseMatic functionality and usage.</p>
+	 </div>
+	</div>
+
+<br><br>
+
+      <h3>Statistical Methods</h3>
+        <div class="row">
+	 <div class="col-sm-1">
+	  <a href="uncertainty.pdf" target="_blank"><button class="btn btn-default btn-lg">pdf</button></a>
+	 </div>
+	 <div class="col-sm-2">
+	  <a href="uncertainty.tex" target="_blank"><button class="btn btn-default btn-lg">tex</button></a>
+	 </div>
+	 <div class="col-sm-8">
+          <p>A note on mathematical methods used in calculation of doses, uncertainties and confidence intervals.</p>
+	 </div>
+	</div>
+
+<br><br>
+
+      <h3>Scientific Methods</h3>
+        <div class="row">
+	 <div class="col-sm-3">
+	  <a href="TRS405_scr.pdf" target="_blank"><button class="btn btn-default btn-lg">pdf</button></a>
+	 </div>
+	 <div class="col-sm-8">
+          <p>Publication describing various methods applied in the DoseMatic framework.</p>
+	 </div>
+	</div>
+
+
+	</div>
+    </div>
+
+
+
+
+
+    <div id="menu2" class="tab-pane fade">
+      <div id="tutorial" class="container-fluid bg-grey" align="left">
+
+      <h3>Windows</h3>
+        <div class="row">
+	 <div class="col-sm-3">
+		 <a href="https://drive.google.com/open?id=1o4P9ufRA_klJNg3-rwBj7RNeuJO-9Iz7" target="_blank"><button class="btn btn-default btn-lg"><i class="fa fa-windows big-icon"></i> setup.exe</button></a>
+	 </div>
+	 </div>
+        <div class="row">
+         <p>Tested on Windows versions: 7, 8 and 10.</p>
+	</div>
+
+      <h3>Linux</h3>
+        <div class="row">
+		<a href="https://github.com/malewick/dosematic" target="_blank"><button class="btn btn-default btn-lg"><i class="fa fa-github big-icon"></i> sources</button></a>
+	 <a href="" target="_blank"><button class="btn btn-default btn-lg"></a> deb</button></a>
+	 <a href="" target="_blank"><button class="btn btn-default btn-lg"></a> rpm</button></a>
+         <br><p>Compile sources with following dependencies:</p>
+         <ul>
+	   <li>GTK v2.24.30</li>
+	   <li>matplotlib v1.5.1</li>
+	   <li>numpy v1.12.1    </li>
+	   <li>scipy v0.17.0    </li>
+         </ul>
+	</div>
+
+      <h3>Mac</h3>
+        <div class="row">
+         <p>Not available yet.</p>
+	</div>
+
+
+
+    </div>
+    </div>
+
+
+
+
+    <div id="menu3" class="tab-pane fade">
+      <h3>Gallery</h3>
+      <div id="tutorial" class="container-fluid bg-grey" align="center">
+	<div class="row">
+
+
+<div class="col-md-3">
+    <div class="thumbnail">
+      <a href=" {% static 'dosematic/images/pic_4.png' %} " target="_blank">
+	      <img src="{% static 'dosematic/images/pic_4.png' %}" alt="dosematic image" style="width:100%">
+      </a>
+      <div class="caption">
+          <p>Some eye candy</p>
+      </div>
+    </div>
+  </div>
+
+
+<div class="col-md-3">
+    <div class="thumbnail">
+      <a href=" {% static 'dosematic/images/pic_1.png' %} " target="_blank">
+	      <img src="{% static 'dosematic/images/pic_1.png' %}" alt="dosematic image" style="width:100%">
+      </a>
+      <div class="caption">
+          <p>Some eye candy</p>
+      </div>
+    </div>
+  </div>
+
+
+<div class="col-md-3">
+    <div class="thumbnail">
+      <a href=" {% static 'dosematic/images/pic_2.png' %} " target="_blank">
+	      <img src="{% static 'dosematic/images/pic_2.png' %}" alt="dosematic image" style="width:100%">
+      </a>
+      <div class="caption">
+          <p>Some eye candy</p>
+      </div>
+    </div>
+  </div>
+
+
+<div class="col-md-3">
+    <div class="thumbnail">
+      <a href=" {% static 'dosematic/images/pic_3.png' %} " target="_blank">
+	      <img src="{% static 'dosematic/images/pic_3.png' %}" alt="dosematic image" style="width:100%">
+      </a>
+      <div class="caption">
+          <p>Some eye candy</p>
+      </div>
+    </div>
+  </div>
+
+
+<div class="col-md-3">
+    <div class="thumbnail">
+      <a href=" {% static 'dosematic/images/main.png' %} " target="_blank">
+	      <img src="{% static 'dosematic/images/main.png' %}" alt="dosematic image" style="width:100%">
+      </a>
+      <div class="caption">
+          <p>Main Window</p>
+      </div>
+    </div>
+  </div>
+
+
+<div class="col-md-3">
+    <div class="thumbnail">
+      <a href=" {% static 'dosematic/images/dic_protracted.png' %} " target="_blank">
+	      <img src="{% static 'dosematic/images/dic_protracted.png' %}" alt="dosematic image" style="width:100%">
+      </a>
+      <div class="caption">
+          <p>Protracted Exposure Module</p>
+      </div>
+    </div>
+  </div>
+
+
+<div class="col-md-3">
+    <div class="thumbnail">
+      <a href=" {% static 'dosematic/images/fish_acute.png' %} " target="_blank">
+	      <img src="{% static 'dosematic/images/fish_acute.png' %}" alt="dosematic image" style="width:100%">
+      </a>
+      <div class="caption">
+          <p>Acute Exposure Module</p>
+      </div>
+    </div>
+  </div>
+
+
+<div class="col-md-3">
+    <div class="thumbnail">
+      <a href=" {% static 'dosematic/images/dic_partial.png' %} " target="_blank">
+	      <img src="{% static 'dosematic/images/fish_acute.png' %}" alt="dosematic image" style="width:100%">
+      </a>
+      <div class="caption">
+          <p>Partial Exposure Module</p>
+      </div>
+    </div>
+  </div>
+
+
+	</div>
+	</div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+<div id="contact" class="container-fluid bg-grey" align="center">
+  <h2 class="text-center">Contact</h2>
+  <div class="row slideanim">
+    <div class="col-sm-4" align="left">
+      <p><span class="glyphicon glyphicon-globe"></span> <a href="http://cern.ch/malewick" target="_blank"> my website</a></p>
+      <p><span class="glyphicon glyphicon-envelope"></span> <a href="mailto:malewick@cern.ch"> malewick@cern.ch</a></p>
+      <p><span class="glyphicon glyphicon-envelope"></span> <a href="mailto:maciej.lewicki@uwr.edu.pl"> maciej.lewicki@uwr.edu.pl</a></p>
+    </div>
+    <div class="col-sm-8" align="left">
+      Any remarks, questions or suggestions concerning the operation of DoseMatic are greatly welcome!<br><br>
+      Also if you are interested in joining the DoseMatic developers don't hesitate to contact us!<br><br>
+      All the software is available open-source, but we kindly ask you to cite our work if you happen to use it or modify it.
+    </div>
+  </div>
+</div>
+
+
+
+<br><br>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<footer class="container-fluid text-center">
+  <a href="#top" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <p>Original Bootstrap theme by  
+  <a href="http://www.w3schools.com/">w3schools</a><br>
+  Modified By <a href="http://www.panoramix.ift.uni.wroc.pl/~lewy" title="Visit author page">malewick</a></p> 
+</footer>
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== ""){
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, 'easeInOutCubic', function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+})
+</script>
+
+<script>
+$(window).scroll(function() {
+  $(".slideanim").each(function(){
+    var pos = $(this).offset().top;
+
+    var winTop = $(window).scrollTop();
+    if (pos < winTop + 800) {
+      $(this).addClass("slide");
+    }
+  });
+});
+</script>
+
+<script>
+$(function () {
+    $('a.link-to-tab').click(function (e) {
+        e.preventDefault();
+        $('a[href="' + $(this).attr('href') + '"]').tab('show');
+    })
+});
+</script>
+
+</html>

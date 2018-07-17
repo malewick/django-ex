@@ -13,6 +13,7 @@ urlpatterns = [
     #url(r'^health$', health),
     url(r'^', include('personal.urls')),
     url(r'^blog/', include('blog.urls')),
+    url(r'^dosematic/', include('dosematic.urls')),
     url(r'^admin/', admin.site.urls),
 ]
 
