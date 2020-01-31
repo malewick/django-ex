@@ -5,7 +5,7 @@ django-markdown-deux==1.0.5
 django-pagedown==1.0.4
 django-simple-blog==0.2.1
 django-simple-math-captcha==1.0.7
-gunicorn==19.4.5
+gunicorn==19.5.0
 psycopg2==2.7.3.1
 whitenoise==3.3.1
 Pillow==4.0.0
