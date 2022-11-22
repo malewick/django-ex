@@ -8,4 +8,4 @@ django-simple-math-captcha==1.0.7
 gunicorn==19.4.5
 psycopg2==2.7.3.1
 whitenoise==3.3.1
-Pillow==4.0.0
+Pillow==9.3.0
